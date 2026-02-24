@@ -237,10 +237,12 @@ h1, h2, h3, h4, h5,
 		text-transform: uppercase;
 		font-size: 16px;
 		letter-spacing: .1em;
+		@include transition(.3s);
 		&:hover, &:focus {
 			text-decoration: none;
-			color: $primary;
+			color: $primary !important;
 			outline: none !important;
+			transform: scale(1.1);
 		}
 	}
 	
@@ -768,8 +770,15 @@ h1, h2, h3, h4, h5,
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-weight: 600;
+	@include transition(.3s);
 	&:hover, &:active, &:focus {
 		outline: none;
+		-webkit-transform: translateY(-5px) scale(1.05);
+		-ms-transform: translateY(-5px) scale(1.05);
+		transform: translateY(-5px) scale(1.05);
+		-webkit-box-shadow: 0px 15px 30px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0px 15px 30px rgba(0,0,0,0.3);
+		box-shadow: 0px 15px 30px rgba(0,0,0,0.3);
 	}
 	&.btn-primary {
 		background: $primary;
@@ -1035,8 +1044,8 @@ h1, h2, h3, h4, h5,
 
 .scroll-to-top {
 	position: fixed;
-	bottom: 30px;
-	right: 30px;
+	bottom: 40px;
+	right: 40px;
 	width: 50px;
 	height: 50px;
 	background: $primary;
@@ -1045,7 +1054,7 @@ h1, h2, h3, h4, h5,
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 1000;
+	z-index: 1100;
 	opacity: 0;
 	visibility: hidden;
 	transition: all 0.3s ease;
@@ -1072,11 +1081,20 @@ h1, h2, h3, h4, h5,
 .progress-wrap{
 	width: 100%;
 	margin-bottom: 30px;
+	padding: 15px;
+	@include border-radius(5px);
+	@include transition(.3s);
+	&:hover {
+		background: rgba($primary, 0.1);
+		-webkit-transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		transform: scale(1.05);
+		box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+	}
 	h3{
 		font-size: 20px;
 		margin-bottom: 10px;
 		font-weight: 500;
-
 	}
 }
 //PROGRESS BAR
@@ -1577,6 +1595,19 @@ textarea.form-control {
 		background: #191919;
 		padding: 30px 20px;
 		@include border-radius(5px);
+		@include transition(.3s);
+		&:hover {
+			background: $primary;
+			-webkit-transform: translateY(-10px) scale(1.1);
+			-ms-transform: translateY(-10px) scale(1.1);
+			transform: translateY(-10px) scale(1.1);
+			box-shadow: 0px 15px 30px rgba(0,0,0,0.3);
+			.text {
+				strong.number, span {
+					color: $black !important;
+				}
+			}
+		}
 	}
 	.text{
 		strong.number{

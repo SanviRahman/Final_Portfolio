@@ -1160,14 +1160,14 @@ h1, h2, h3, h4, h5,
 //PROJECT
 .project{
 	width: 100%;
-	height: 285px;
+	height: 245px;
 	margin-bottom: 30px;
 	position: relative;
 	z-index: 0;
 	&.img-2{
 		height: 600px;
 		@include media-breakpoint-down(sm){
-			height: 285px;
+			height: 245px;
 		}
 		.text{
 			max-width: 45%;
